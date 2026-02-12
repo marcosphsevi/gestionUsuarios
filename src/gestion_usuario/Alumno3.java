@@ -1,4 +1,5 @@
-package gestionUsuarios;
+package gestion_usuario;
+
 public class Alumno3 {
 	
 	private double alquiler;

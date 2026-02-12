@@ -1,4 +1,4 @@
-package gestionUsuarios;
+package gestion_usuario;
 import java.util.*;
 public class Menu {
 

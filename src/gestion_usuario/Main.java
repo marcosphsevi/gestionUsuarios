@@ -58,5 +58,8 @@ public class Main {
 		ingresos.rellenarWallapop(sc);
 		ingresos.rellenarHerencia(sc);
 		ingresos.imprimirInformacion();
+
+        Alumno3 kiriki = new Alumno3();
+		Menu.menu(kiriki);
 	}
 }
