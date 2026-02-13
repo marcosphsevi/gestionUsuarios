@@ -3,8 +3,7 @@ import java.util.*;
 public class Menu {
 
 
-	public static void menu(Alumno3 kiriki) {
-		Scanner leer = new Scanner(System.in);
+	public static void menu(Alumno3 kiriki, Scanner sc) {
 
 		boolean valido=false;
 		while (!valido) {
@@ -19,25 +18,25 @@ public class Menu {
 				System.out.println("3. Sus gastos varios.");
 				System.out.println("4. Salir.");
 
-				opcion = leer.nextInt();
+				opcion = sc.nextInt();
 				switch (opcion) {
 
 				case 1:
 					double alquiler1;
 					System.out.println("Escriba sus gastos de alquiler: ");
-					alquiler1 = leer.nextDouble();
+					alquiler1 = sc.nextDouble();
 					kiriki.setAlquiler(alquiler1);
 					break;
 				case 2:
 					double viajes1;
 					System.out.println("Escriba sus gastos en viajes: ");
-					viajes1 = leer.nextDouble();
+					viajes1 = sc.nextDouble();
 					kiriki.setViajes(viajes1);
 					break;
 				case 3:
 					double gastosvarios1;
 					System.out.println("Escriba sus gastos varios: ");
-					gastosvarios1 = leer.nextDouble();
+					gastosvarios1 = sc.nextDouble();
 					kiriki.setGastosvarios(gastosvarios1);
 					break;
 				case 4:
@@ -58,9 +57,8 @@ public class Menu {
 			}catch (InputMismatchException e) {
 				System.err.println("Error, porfavor introduzca bien el contenido.");
 				System.out.println();
-				leer.nextLine();
+				sc.nextLine();
 			}
 		}
-		leer.close();
 	}
 }
