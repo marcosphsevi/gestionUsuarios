@@ -64,12 +64,12 @@ public class Main {
 		ingresos.imprimirInformacion();
 
         Alumno3 kiriki = new Alumno3();
-		Menu.menu(kiriki);
+		Menu.menu(kiriki, sc);
 
 
 		String opcio;
 		ArrayList<Viajes> ListaViajes = new ArrayList<>();
-		Scanner leer = new Scanner(System.in);
+		
 
 		String fecha;
 		String coste;
@@ -77,7 +77,7 @@ public class Main {
 
 		do {
 			System.out.println("¿Has realizado algun viaje? si/no");
-			opcio = leer.nextLine();
+			opcio = sc.nextLine();
 		} while (!opcio.equalsIgnoreCase("si") && !opcio.equalsIgnoreCase("no"));
 		opcio = opcio.trim();
 
@@ -87,17 +87,17 @@ public class Main {
 				System.out.println("======= Viajes=======");
 
 				System.out.print("Destino: ");
-				destino = leer.nextLine();
+				destino = sc.nextLine();
 
 				do {
 					System.out.print("Fecha (formato dd/MM/aaaa): ");
-					fecha = leer.nextLine();
+					fecha = sc.nextLine();
 				} while (!Depurar.depurarFecha(fecha));
 
 				do {
 					do {
 						System.out.print("Coste: ");
-						coste = leer.nextLine();
+						coste = sc.nextLine();
 					} while (!Depurar.depurarDouble(coste));
 				} while (Double.parseDouble(coste) <= 0);
 
@@ -105,7 +105,7 @@ public class Main {
 				ListaViajes.add(v);
 
 				System.out.println("Introduzca \"1\" para salir, cualquier otro parametro para continuar: ");
-				opcio = leer.nextLine();
+				opcio = sc.nextLine();
 			} while (!opcio.equals("1"));
 
 			for (Viajes e : ListaViajes) {
@@ -114,6 +114,6 @@ public class Main {
 
 		}
 
-		leer.close();
+		sc.close();
 	}
 }
